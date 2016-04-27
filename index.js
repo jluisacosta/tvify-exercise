@@ -1,1 +1,3 @@
-alert('Hola mundo!');
+$(function () {
+    
+})
