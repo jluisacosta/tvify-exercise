@@ -10,7 +10,6 @@ $(function () {
             var searchText = $(this)
                 .find('input[type="text"]')
                 .val();
-            alert("Se ha buscado: "+ searchText);
         });
 
     var template =  '<article class="tv-show">' +
@@ -27,33 +26,20 @@ $(function () {
         url: 'http://api.tvmaze.com/shows',
         success: function (shows, textStatus, xhr) {
 
-            var $divTvShows = $('#app-body').find('.tv-shows');
+                    var $tvShowsDiv = $('#app-body').find('.tv-shows');
+                    $tvShowsDiv.find('.loader').remove();
 
-            shows.forEach(function (show) {
-                var article = template
-                    .replace(':name:', show.name)
-                    .replace(':img:', show.image.medium)
-                    .replace(':summary:', show.summary)
-                    .replace(':img alt:', show.name + " Logo");
+                    shows.forEach(function (show) {
+                        var article = template
+                            .replace(':name:', show.name)
+                            .replace(':img:', show.image.medium)
+                            .replace(':summary:', show.summary)
+                            .replace(':img alt:', show.name + " Logo");
 
-                $divTvShows.append($(article));
-            });
-        }
+                        var $article = $(article);
+                        $article.hide();
+                        $tvShowsDiv.append($article.slideDown());
+                    });
+                }
     });
-    /*$.ajax({
-        url: '/path/to/file',
-        type: 'default GET (Other values: POST)',
-        dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
-        data: {param1: 'value1'}
-    })
-    .done(function() {
-        console.log("success");
-    })
-    .fail(function() {
-        console.log("error");
-    })
-    .always(function() {
-        console.log("complete");
-    });*/
-
 })
