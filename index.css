@@ -107,6 +107,11 @@ body {
     width: 20%;
 }
 
+.message {
+    padding: 0 0 0 20px;
+    margin-top: 10px;
+}
+
 /* Spinner Loader */
 
 .loader,
