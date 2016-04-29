@@ -42,13 +42,11 @@ $(function () {
         });
     }
 
-    $.ajax({
-        url: 'http://api.tvmaze.com/shows',
-        success: function (shows, textStatus, xhr) {
+    $.ajax('http://api.tvmaze.com/shows')
+        .then( function (shows) {
             $tvShowsDiv.find('.loader').remove();
             renderShows(shows);
-        }
-    });
+        });
 
     /**
      * Submit search-form
