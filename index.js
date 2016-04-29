@@ -25,19 +25,12 @@ $(function () {
         $tvShowsDiv.find('.loader').remove();
 
         shows.forEach( function (show) {
-            var tvShow = tvShowTemplate
+            var $tvShow = $(tvShowTemplate
+                .replace(':img:',show.image ? show.image.medium : 'http://promovie.info/img/films/not_found.jpg')
+                .replace(':img alt:', show.name + " Logo")
                 .replace(':name:', show.name)
-                .replace(':summary:', show.summary)
-                .replace(':img alt:', show.name + " Logo");
-
-            if(show.image){
-                tvShow = tvShow.replace(':img:',show.image.medium);
-            }
-            else {
-                tvShow = tvShow.replace(':img:','http://promovie.info/img/films/not_found.jpg');
-            }
-
-            $tvShow = $(tvShow);
+                .replace(':summary:', show.summary));
+                
             $tvShow.hide();
             $tvShowsDiv.append($tvShow);
             $tvShow.fadeIn(2000);
