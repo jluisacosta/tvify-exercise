@@ -22,6 +22,8 @@ $(function () {
 
 
     function renderShows(shows) {
+        $tvShowsDiv.find('.loader').remove();
+
         shows.forEach( function (show) {
             var tvShow = tvShowTemplate
                 .replace(':name:', show.name)
@@ -42,11 +44,16 @@ $(function () {
         });
     }
 
-    $.ajax('http://api.tvmaze.com/shows')
-        .then( function (shows) {
-            $tvShowsDiv.find('.loader').remove();
-            renderShows(shows);
-        });
+    if(!localStorage.shows){
+        $.ajax('http://api.tvmaze.com/shows')
+            .then( function (shows) {
+                localStorage.shows = JSON.stringify(shows);
+                renderShows(shows);
+            });
+    }
+    else{
+        renderShows(JSON.parse(localStorage.shows));
+    }
 
     /**
      * Submit search-form
@@ -72,12 +79,11 @@ $(function () {
                         return element.show;
                     });
 
-                    $loader.remove();
-
                     if(shows.length > 0){
                         renderShows(shows);
                     }
                     else {
+                        $loader.remove();
                         $tvShowsDiv.append($searchMsg);
                     }
                 }
