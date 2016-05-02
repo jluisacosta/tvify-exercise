@@ -1,3 +1,10 @@
+/**
+ * Module dependencies
+ */
+
+var $ = require('jquery');
+
+
 $(function () {
     /**
      * Rendering shows
