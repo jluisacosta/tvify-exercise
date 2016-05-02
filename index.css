@@ -88,8 +88,28 @@ body {
 }
 
 .tv-show button.like img {
-    max-width: 24px;
-    max-height: 24px;
+    width: 24px;
+    height: 24px;
+    opacity: .5;
+    transition: all .5s ease;
+}
+
+.tv-show.liked button.like img{
+    width: 32px;
+    height: 32px;
+    opacity: 1;
+}
+
+.tv-show button.like img:hover {
+    opacity: 1;
+}
+
+.tv-show.liked {
+    background-color:  #d1ffd3;
+}
+
+.tv-show.liked:hover {
+    background-color: #aef9b1;
 }
 
 .left {

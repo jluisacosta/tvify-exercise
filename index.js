@@ -20,7 +20,10 @@ $(function () {
                             '<p>No show matched your search criteria.</p>'+
                         '</div>' );
 
-
+    $tvShowsDiv.on('click','button.like', function (event) {
+        var $this = $(this);
+        $this.closest('.tv-show').toggleClass('liked');
+    });
 
     function renderShows(shows) {
         $tvShowsDiv.find('.loader').remove();
