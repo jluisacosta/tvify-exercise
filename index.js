@@ -2,8 +2,7 @@
  * Module dependencies
  */
 
-var $ = require('jquery');
-
+import $ from 'jquery';
 
 $(function () {
     /**
