@@ -12,6 +12,7 @@ $(function () {
                                 '<div class="right info">'+
                                     '<h1>:name:</h1>'+
                                     ':summary:'+
+                                    '<button class="like"><img src="http://cdn.urbytus.net/_icons/comment-like-active.png"></button>'+
                                 '</div>'+
                             '</article>';
     var $searchMsg = $( '<div class="message">'+
@@ -30,7 +31,7 @@ $(function () {
                 .replace(':img alt:', show.name + " Logo")
                 .replace(':name:', show.name)
                 .replace(':summary:', show.summary));
-                
+
             $tvShow.hide();
             $tvShowsDiv.append($tvShow);
             $tvShow.fadeIn(2000);
