@@ -17,6 +17,9 @@ var $searchMsg = $( '<div class="message">'+
                     '</div>' );
 
 page('/', function (context, next) {
+    $searchMsg.remove();
+    $tvShowsDiv.find('.tv-show').remove();
+
     if(!localStorage.shows){
         getShows(function (shows) {
             localStorage.shows = JSON.stringify(shows);
