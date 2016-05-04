@@ -16,7 +16,7 @@ var $searchMsg = $( '<div class="message">'+
                         '<p>No show matched your search criteria.</p>'+
                     '</div>' );
 
-page('/tvify-exercise/', function (context, next) {
+page('/tvify-exercise', function (context, next) {
     $searchMsg.remove();
     $tvShowsDiv.find('.tv-show').remove();
 
