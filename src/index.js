@@ -16,7 +16,7 @@ var $searchMsg = $( '<div class="message">'+
                         '<p>No show matched your search criteria.</p>'+
                     '</div>' );
 
-page('/', function (context, next) {
+page('/tvify-exercise/', function (context, next) {
     $searchMsg.remove();
     $tvShowsDiv.find('.tv-show').remove();
 
@@ -31,7 +31,7 @@ page('/', function (context, next) {
     }
 });
 
-page('/search', function (context, next) {
+page('/tvify-exercise/search', function (context, next) {
     $searchMsg.remove();
     $tvShowsDiv.find('.tv-show').remove();
     $loader.appendTo($tvShowsDiv);

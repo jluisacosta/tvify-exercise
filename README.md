@@ -8,4 +8,5 @@ This project were developed only to practice and learn some of the technologies 
 * JS, jQuery, AJAX
 * npm (Node Package Manager)
 * Browserify
-* Git :)
+* Babel (ECMAScript 2015 compatibility)
+* Git & GitHub :)
