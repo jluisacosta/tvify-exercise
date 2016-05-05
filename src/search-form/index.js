@@ -12,6 +12,6 @@ $('#app-body')
             .find('input[type="text"]')
             .val();
 
-        page(`/search?q=${searchText}`);
+        page(`/tvify-exercise/search?q=${searchText}`);
         event.preventDefault();
     });
