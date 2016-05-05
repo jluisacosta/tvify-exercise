@@ -11467,7 +11467,7 @@ var $loader = (0, _jquery2.default)('<div class="loader">Loading...</div>'); /**
 
 var $searchMsg = (0, _jquery2.default)('<div class="message">' + '<h3>Nothing Found</h3>' + '<p>No show matched your search criteria.</p>' + '</div>');
 
-(0, _page2.default)('/', function (context, next) {
+(0, _page2.default)('/tvify-exercise', function (context, next) {
     $searchMsg.remove();
     _tvShowsContainer2.default.find('.tv-show').remove();
 
@@ -11481,7 +11481,7 @@ var $searchMsg = (0, _jquery2.default)('<div class="message">' + '<h3>Nothing Fo
     }
 });
 
-(0, _page2.default)('/search', function (context, next) {
+(0, _page2.default)('/tvify-exercise/search', function (context, next) {
     $searchMsg.remove();
     _tvShowsContainer2.default.find('.tv-show').remove();
     $loader.appendTo(_tvShowsContainer2.default);
@@ -11559,7 +11559,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _jquery2.default)('#app-body').find('form').submit(function (event) {
     var searchText = (0, _jquery2.default)(this).find('input[type="text"]').val();
 
-    (0, _page2.default)('/search?q=' + searchText);
+    (0, _page2.default)('/tvify-exercise/search?q=' + searchText);
     event.preventDefault();
 });
 

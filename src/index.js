@@ -10,11 +10,11 @@ import $tvShowsDiv from 'src/tv-shows-container';
 import 'src/search-form';
 import qs from 'qs';
 
-var $loader = $('<div class="loader">Loading...</div>');
-var $searchMsg = $( '<div class="message">'+
-                        '<h3>Nothing Found</h3>'+
-                        '<p>No show matched your search criteria.</p>'+
-                    '</div>' );
+var $loader = $(`<div class="loader">Loading...</div>`);
+var $searchMsg = $(`<div class="message">
+                        <h3>Nothing Found</h3>
+                        <p>No show matched your search criteria.</p>
+                    </div>`);
 
 page('/tvify-exercise', function (context, next) {
     $searchMsg.remove();
@@ -31,7 +31,7 @@ page('/tvify-exercise', function (context, next) {
     }
 });
 
-page('tvify-exercise/search', function (context, next) {
+page('/tvify-exercise/search', function (context, next) {
     $searchMsg.remove();
     $tvShowsDiv.find('.tv-show').remove();
     $loader.appendTo($tvShowsDiv);
